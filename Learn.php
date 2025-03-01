@@ -21,11 +21,11 @@
         </nav>
     </header>
     <section>
-        <h2>Take our Quiz</h2>
-        <h3>Test your knowledge on STD's </h3>
+        <h2></a>Take our Quiz</h2>
+        <p>STDs are a taboo subject, but that doesn't mean you shouldn't be knowledgeable about them, their risks, and how to prevent them. Take our quiz to test your knowledge. </p>
     </section>
     <section>
-        
+        <h2>Resources You Can Utilize</h2>
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
