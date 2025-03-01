@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit STD Proof</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Submit Your Proof of STD Status</h1>
+        <h1>Contact Our STD Notification Service</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -19,20 +19,21 @@
         </nav>
     </header>
     <section>
-        <form id="proof-form" action="submit-proof.php" method="post" enctype="multipart/form-data">
-            <label for="name">Full Name:</label>
+        <h2>Get in Touch</h2>
+        <form id="contact-form" action="process-contact.php" method="post">
+            <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             
-            <label for="email">Email Address:</label>
+            <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
             
-            <label for="proof">Upload Proof (PDF/Image):</label>
-            <input type="file" id="proof" name="proof" accept=".jpg,.jpeg,.png,.pdf" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
             
-            <button type="submit">Submit Proof</button>
+            <button type="submit">Send Message</button>
         </form>
     </section>
     <footer>
