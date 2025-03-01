@@ -10,6 +10,12 @@
 <body>
     <header>
         <h1>Submit Your Proof of STD Status</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+            </ul>
+        </nav>
     </header>
     <section>
         <form id="proof-form" action="submit-proof.php" method="post" enctype="multipart/form-data">
