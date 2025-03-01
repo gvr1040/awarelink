@@ -16,6 +16,8 @@
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
+            <li><a href="send_sms.php">Test Center Finder</a></li>
+            <li><a href="Learn.php">Get the Facts</a></li>
         </nav>
     </header>
     <section>

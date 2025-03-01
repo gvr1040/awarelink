@@ -16,11 +16,16 @@
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a href="send_sms.php">Test Center Finder</a></li>
+                <li><a href="Learn.php">Get the Facts</a></li>
             </ul>
         </nav>
     </header>
     <section>
-        <h2></h2>
+        <h2>Take our Quiz</h2>
+        <h3>Test your knowledge on STD's </h3>
+    </section>
+    <section>
+        
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
