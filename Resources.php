@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Get the Facts</h1>
+        <h1>Resources</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -21,12 +20,16 @@
         </nav>
     </header>
     <section>
-        <h2></a>Take our Quiz</h2>
-        <p>STDs are a taboo subject, but that doesn't mean you shouldn't be knowledgeable about them, their risks, and how to prevent them. Take our quiz to test your knowledge. </p>
+        <h2>Navigating STDs</h2>
     </section>
     <section>
-        <h2>Resources You Can Utilize</h2>
+        <h3>General information about STDs:</h3>
+        <p><a href = "https://www.mayoclinic.org/diseases-conditions/sexually-transmitted-diseases-stds/in-depth/std-symptoms/art-20047081"> Mayo Clinic: Sexually Transmitted Disease (STD) Symptoms</a></p>
+        <p><a href = "https://www.plannedparenthoodaction.org/planned-parenthood-advocates-arizona/blog/std-awareness-stigma-and-sexually-transmitted-diseases"> STD Awareness: Stigma and Sexually Transmitted Diseases</a></p>
     </section>
+
+    
+    
     <footer>
         <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
     </footer>

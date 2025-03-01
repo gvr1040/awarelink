@@ -119,6 +119,8 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <li><a href="send_sms.php">Test Center Finder</a></li>
+                <li><a href="Learn.php">Get the Facts</a></li>
             </ul>
         </nav>
     </header>

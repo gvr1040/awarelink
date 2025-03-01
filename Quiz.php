@@ -20,7 +20,7 @@
         </nav>
     </header>
     <section>
-        <h2></a>Question 1:</h2>
+        <h2>Question 1:</h2>
         <p> </p>
     </section>
     <section>
