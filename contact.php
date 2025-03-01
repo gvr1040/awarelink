@@ -37,7 +37,7 @@
         </form>
     </section>
     <footer>
-        <p>&copy; 2025 STD Notification Service. All rights reserved.</p>
+        <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
     </footer>
 </body>
 </html>

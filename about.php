@@ -29,7 +29,7 @@
         <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures.</p>
     </section>
     <footer>
-        <p>&copy; 2025 STD Notification Service. All rights reserved.</p>
+        <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
     </footer>
 </body>
 </html>
