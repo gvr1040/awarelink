@@ -27,7 +27,7 @@
         <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
         
         <h2>Privacy Policy</h2>
-        <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures. Read more about our privacy policy <a href="privacy_policy">here</a>.
+        <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures. Read more about our privacy policy <a href="privacy_policy.php">here</a>.
  </p>
     </section>
     <footer>
