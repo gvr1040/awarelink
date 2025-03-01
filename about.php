@@ -20,13 +20,13 @@
     </header>
     <section>
         <h2>Our Mission</h2>
-        <p>We provide a confidential and secure way to submit and verify STD status information.</p>
+        <p>At AwareLink, we understand that it can be sometimes difficult to notify partners about STD status. That's why we've created a confidential and secure way to anonymously share important health updates to others.</p>
         
         <h2>How It Works</h2>
-        <p>Upload your medical documentation through our secure form. We verify the information and provide you with verification that can be shared with partners.</p>
+        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
         
         <h2>Privacy Policy</h2>
-        <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures.</p>
+        <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures. Read more about our privacy policy </p>
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
