@@ -12,3 +12,14 @@ deploymentTarget = "cloudrun"
 [[ports]]
 localPort = 8000
 externalPort = 80
+
+[workflows]
+runButton = "PHP Server"
+
+[[workflows.workflow]]
+name = "PHP Server"
+author = 39613924
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "php -S 0.0.0.0:8000 -t ."
