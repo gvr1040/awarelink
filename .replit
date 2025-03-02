@@ -19,6 +19,7 @@ runButton = "PHP Server"
 [[workflows.workflow]]
 name = "PHP Server"
 author = 39613924
+mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
