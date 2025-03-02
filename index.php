@@ -22,6 +22,7 @@
     </header>
     <section>
         <h2> Please provide your information below.</h2>
+        <p>This is the verification process for the notification program. After you are verified, we will help you anonymously notify the individuals you choose to know about your status.</p>
         <form id="proof-form" action="submit-proof.php" method="post">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
@@ -44,7 +45,7 @@
             <label for="state">State (if applicable):</label>
             <input type="text" id="state" name="state" required>
             
-            <sub>By submitting you agree that you are consenting to                    AwareLink's privacy policy and that you are 18 years or                         older.</sub>
+            <sub>By submitting you agree that you are consenting to AwareLink's <a href="privacy_policy.php">privacy policy</a> and that you are 18 years or                         older.</sub>
             <button type="submit">Submit Information</button>
         </form>
         

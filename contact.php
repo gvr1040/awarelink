@@ -175,7 +175,7 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
         <h2> Can't access the testing centers?</h2>
         <p> No worries! There are STD test resources available that don't require a testing center. </p>
         <p> Healthline outlines some of the best at-home STD tests in 
-        <a href= "https://www.healthline.com/health/at-home-std-test#Quick-look-at-the-best-at-home-STD-tests"> this article</a> </p>
+        <a href= "https://www.healthline.com/health/at-home-std-test#Quick-look-at-the-best-at-home-STD-tests"> this article.</a> </p>
         </p>
     </section>
     <footer>

@@ -23,11 +23,11 @@
     </header>
     <section>
         <h2>How it Works</h2>
-        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
+        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out. <br><br> We also provide resources that can help you get tested, whether it is through a clinic or through a home test.</p>
         
 
         <h2>Our Mission</h2>
-        <p>At AwareLink, we understand that it can be sometimes difficult to notify partners about STD status. That's why we've created a confidential and secure way to anonymously share important health updates to others.</p>
+        <p>At AwareLink, we understand that it can be sometimes difficult to notify partners about STD status. That's why we've created a confidential and secure way to anonymously share important health updates to others. We also understand accessibility matters when it comes to preventing and handlinginfectious diseases, so this program is designed to spread awareness about available resources and life-changing information.</p>
 
         <h2>Meet the Team </h2>
         <p> We are a team of students from Rochester Institute of Technology who are committed to the Women in Computing Organization. We are dedicated to providing a confidential platform to curb not only the spread of STDs, but the misinformation surrounding STDs.  </p>
