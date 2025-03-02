@@ -23,5 +23,5 @@
         <h2>Our Policies</h2>
         <p> We understand that we are handling sensitive information, and we take this handling of information (and your privacy!) very seriously.  <p>
     <h3>The Information We Collect When You Submit a Form</h3>
-            <p> By submitting the form, you are consenting to your sensitive health information being sent to the respective emails you provided. However, we do not store this information.  </p>
+            <p> When you submit a form, we   </p>
         
