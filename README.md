@@ -1,0 +1,3 @@
+The idea for this project came from the growing need for accessible and confidential healthcare services, particularly for STD testing. Many individuals hesitate to seek out testing due to the stigma surrounding it, or they struggle to find nearby facilities that offer these services. The goal of this project is to bridge that gap by providing a user-friendly, anonymous, and immediate way to find and contact STD testing centers.
+
+This project came from the need to create an accessible and confidential healthcare service, particularly for STD. Due to stigma many hesitate to seek out testing or struggle to find the services. The goal is to provide a user-friendly, anonymous way for STD testing.
