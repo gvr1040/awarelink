@@ -23,5 +23,8 @@
         <h2>Our Policies</h2>
         <p> We understand that we are handling sensitive information, and we take this handling of information (and your privacy!) very seriously.  <p>
     <h3>The Information We Collect When You Submit a Form</h3>
-            <p> When you submit a form, we   </p>
+            <p> When you submit a form, we may collect the following information: </p>  
+        <p> Contact Information: Name, email address, and phone number</p>
+        <p> Health Information: Information related to your STD status, exposure, and appropriate health records</p>
+        <p> Authentification details: Information used to verify your identity</p>
         
