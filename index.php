@@ -20,8 +20,8 @@
         </nav>
     </header>
     <section>
-        <h2> Please provide proof of your STD status below.</h2>
-        <form id="proof-form" action="submit-proof.php" method="post" enctype="multipart/form-data">
+        <h2> Please provide your information below.</h2>
+        <form id="proof-form" action="submit-proof.php" method="post">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -31,18 +31,24 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <label for="proof">Upload Proof (PDF/Image):</label>
-            <input type="file" id="proof" name="proof" accept=".jpg,.jpeg,.png,.pdf">
+            <label for="clinic">Clinic Name:</label>
+            <input type="text" id="clinic" name="clinic" required>
 
-            <button type="submit">Submit Proof</button>
+            <button type="submit">Submit Information</button>
         </form>
-    </section>
-    <section>
-        <h2> "What should I submit for proof?"</h2>
-        <p> Please submit an official version of an STD lab test that has at least one positive result. The document should be from a test taken within the last 3 months. </p>
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>
     </footer>
+
+    <!-- Optional Script to show Thank you message upon form submission -->
+    <script>
+        const form = document.getElementById('proof-form');
+        form.onsubmit = function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+            alert("Thank you for submitting your information.");
+            form.reset(); // Reset form fields if needed
+        }
+    </script>
 </body>
 </html>
