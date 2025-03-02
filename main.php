@@ -41,7 +41,7 @@
         </form>
     </section>
     <footer>
-        <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
+        <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>
         <p><a href="privacy_policy.php">Privacy Policy</a></p>
 
     </footer>
