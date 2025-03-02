@@ -9,13 +9,13 @@
     </head>
     <body>
         <header>
+            <a href="index.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
             <h1>About Our STD Notification Service</h1>
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="send_sms.php">Test Center Finder</a></li>
                     <li><a href="Learn.php">Get the Facts</a></li>
                 </ul>
             </nav>

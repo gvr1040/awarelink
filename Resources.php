@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
+        <a href="index.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
         <h1>Resources</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="send_sms.php">Test Center Finder</a></li>
                 <li><a href="Learn.php">Get the Facts</a></li>
             </ul>
         </nav>
@@ -28,6 +28,12 @@
         <p><a href = "https://www.plannedparenthoodaction.org/planned-parenthood-advocates-arizona/blog/std-awareness-stigma-and-sexually-transmitted-diseases"> STD Awareness: Stigma and Sexually Transmitted Diseases</a></p>
     </section>
 
+    <section>
+        <h3> Preventing STDs:</h3>
+        <p><a href="https://www.e7health.com/post/154/which-stds-have-vaccines/ ">e7 Health: Which STDs Have Vaccines?</a></p>
+        <p><a href= https://www.cdc.gov/sti/prevention/index.html> CDC: How to Prevent STIs</a>
+        </p>
+    </section>
     
     
     <footer>
