@@ -20,10 +20,13 @@
             </ul>
         </nav>
     </header>
+    
     <section>
+        
         <h1>Welcome to AwareLink</h1>
-        <p>AwareLink is a trusted site for securely and discretely sharing STD (Sexually Transmitted Disease) exposures to partners, and receiving information about nearby testing resources at the click of a button.</p>
+        <p>AwareLink is a trusted site for securely and discretely sharing STD (sexually transmitted disease) exposures to partners, and receiving information about nearby testing resources at the click of a button.</p>
     </section>
+    
     <section>
         <a href="index.php"><h3>Fill out a notification form</h3></a>
         <p> Fill out this form to begin the notification process and keep your partners updated on your status.</p>

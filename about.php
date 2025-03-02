@@ -31,7 +31,7 @@
         <p> Alicia Tesch: 1st year student pursuing a BS in computer science at RIT, front-end development and design </p>
         <p> Abigail Eckstein: 1st year student pursuing a BS in computer science, front-end development</p>
         
-        <h2>How It Works</h2>
+        <h2>How it Works</h2>
         <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
         
         <h2>Privacy Policy</h2>

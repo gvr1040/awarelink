@@ -21,7 +21,7 @@
         </nav>
     </header>
     <section>
-        <h2>Navigating STDs</h2>
+        <h2>Navigating STD Risk</h2>
     
         <h3>General information about STDs:</h3>
         <p><a href = "https://www.mayoclinic.org/diseases-conditions/sexually-transmitted-diseases-stds/in-depth/std-symptoms/art-20047081"> Mayo Clinic: Sexually Transmitted Disease (STD) Symptoms</a></p>
@@ -30,6 +30,10 @@
         <h3> Preventing STDs:</h3>
         <p><a href="https://www.e7health.com/post/154/which-stds-have-vaccines/ ">e7 Health: Which STDs Have Vaccines?</a></p>
         <p><a href= https://www.cdc.gov/sti/prevention/index.html> CDC: How to Prevent STIs</a>
+        </p>
+        <hr>
+        <h3> Myths about STDs:</h3>
+        <p><a href="https://news.umiamihealth.org/en/10-myths-and-truths-about-sexually-transmitted-infections/" >10 Myths (and Truths) About Sexually Transmitted Infections</a></p>
         </p>
     </section>
     
