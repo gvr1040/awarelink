@@ -8,13 +8,14 @@
 </head>
 <body>
     <header>
-        <a href="index.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
+        <a href="homepage.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
         <h1>Privacy Policy</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="homepage.php">Home</a></li>
+                <li><a href="index.php">Start a Form</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="contact.php">Get Tested</a></li>
                 <li><a href="Learn.php">Get the Facts</a></li>
             </ul>
         </nav>
@@ -28,4 +29,11 @@
         <p> Contact Information: Name, email address, and phone number</p>
         <p> Health Information: Information related to your STD status, exposure, health records, and clinic affiliation</p>
         <p> Authentification details: Information used to verify your identity</p>
-        
+    </section>
+        <footer>
+                <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
+                <p><a href="privacy_policy.php">Privacy Policy</a></p>
+
+            </footer>
+        </body>
+        </html>
