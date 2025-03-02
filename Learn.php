@@ -22,13 +22,31 @@
             </nav>
         </header>
     <section>
-        <h2><a href="Quiz.php">Take Our Quiz</a></h2>
-
-        <p>STDs are a taboo subject, but that doesn't mean you shouldn't be knowledgeable about them, their risks, and how to prevent them. Take our quiz to test your knowledge. </p>
-    </section>
-    <section>
-        <h2><a href="Resources.php">Resources You Can Utilize</a></h2>
-        <p>Here is a compilation of online resources to help you learn more about STDs and how to prevent them.</p>
+        <h2>Learn About STDs and STIs</h2>
+        <p>STDs are often a taboo subject, but staying informed is crucial for your health and the health of your partners. Explore our resources to learn more about STDs, prevention methods, and testing options.</p>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3>Test Your Knowledge</h3>
+                <p>Take our interactive quiz to test your knowledge about STDs/STIs, their risks, and prevention methods.</p>
+                <p>Many people have misconceptions about STDs - find out if you know the facts!</p>
+                <a href="Quiz.php"><button>Take the Quiz</button></a>
+            </div>
+            
+            <div class="card">
+                <h3>Educational Resources</h3>
+                <p>Access a compilation of trusted online resources to help you learn more about STDs and how to prevent them.</p>
+                <p>From CDC guidelines to medical research, stay informed with accurate information.</p>
+                <a href="Resources.php"><button>View Resources</button></a>
+            </div>
+            
+            <div class="card">
+                <h3>Get Tested</h3>
+                <p>Find testing centers near you or learn about at-home testing options.</p>
+                <p>Regular testing is an important part of sexual health, especially if you have multiple partners.</p>
+                <a href="contact.php"><button>Find Testing Options</button></a>
+            </div>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>

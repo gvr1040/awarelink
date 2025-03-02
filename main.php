@@ -9,6 +9,9 @@
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <a href="homepage.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
+        </div>
         <h1>Submit Your Proof of STD Status</h1>
         <nav>
             <ul>

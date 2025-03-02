@@ -29,12 +29,32 @@
    <hr>
         <h3> Preventing STDs:</h3>
         <p><a href="https://www.e7health.com/post/154/which-stds-have-vaccines/ ">e7 Health: Which STDs Have Vaccines?</a></p>
-        <p><a href= https://www.cdc.gov/sti/prevention/index.html> CDC: How to Prevent STIs</a>
-        </p>
-        <hr>
-        <h3> Myths about STDs:</h3>
-        <p><a href="https://news.umiamihealth.org/en/10-myths-and-truths-about-sexually-transmitted-infections/" >10 Myths (and Truths) About Sexually Transmitted Infections</a></p>
-        </p>
+        <h2>STD and STI Resources</h2>
+        <p>Here are reliable resources to help you learn more about STDs, prevention methods, and testing options.</p>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3>Prevention Information</h3>
+                <p>Learn how to prevent sexually transmitted infections with guidance from the CDC.</p>
+                <a href="https://www.cdc.gov/sti/prevention/index.html" target="_blank"><button>CDC Prevention Guide</button></a>
+            </div>
+            
+            <div class="card">
+                <h3>Myths and Facts</h3>
+                <p>Learn the truth behind common myths about sexually transmitted infections.</p>
+                <a href="https://news.umiamihealth.org/en/10-myths-and-truths-about-sexually-transmitted-infections/" target="_blank"><button>Read About Myths</button></a>
+            </div>
+            
+            <div class="card">
+                <h3>Testing Information</h3>
+                <p>Find out when and how often you should get tested based on your personal situation.</p>
+                <a href="https://www.cdc.gov/std/prevention/screeningreccs.htm" target="_blank"><button>Testing Recommendations</button></a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="Learn.php"><button>Back to Learning Center</button></a>
+        </div>
     </section>
     
     

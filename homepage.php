@@ -8,11 +8,13 @@
 </head>
 <body>
     <header>
-        <a href="homepage.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
+        <div class="logo-container">
+            <a href="homepage.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
+        </div>
         <h1>AwareLink: Stay Aware</h1>
         <nav>
             <ul>
-                <li><a href="homepage.php">Home</a></li>
+                <li><a href="homepage.php" class="active">Home</a></li>
                 <li><a href="index.php">Start a Form</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Get Tested</a></li>
