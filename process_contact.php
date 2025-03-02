@@ -64,7 +64,7 @@ function sendSms($phoneNumber, $centers) {
     return $response;
 }
 
-// Handle AJAX request
+
 $response = ['success' => false, 'message' => ''];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

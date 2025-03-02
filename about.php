@@ -23,7 +23,7 @@
     </header>
     <section>
         <h2>How it Works</h2>
-        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out. <br><br> We also provide resources that can help you get tested, whether it is through a clinic or through a home test.</p>
+        <p>Upload your identification information and medical information through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out. <br><br> We also provide resources that can help you get tested, whether it is through a clinic or through a home test.</p>
         
 
         <h2>Our Mission</h2>
