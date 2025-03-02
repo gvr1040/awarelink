@@ -156,7 +156,10 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
                 </div>
             <?php endif; ?>
         <?php endif; ?>
-
+        <img src = https://cdn.pixabay.com/photo/2024/05/02/07/02/doctor-8733826_1280.jpg width = "300" height = "300" style="display: block; margin-left: auto; 
+            margin-right: auto; max-width: 100%; 
+            height: auto;" alt="doctor's office">
+            
         <h2>Find STD Testing Centers Near You</h2>
         <p>Enter your location and phone number(s) to receive information about nearby STD testing centers.</p>
 

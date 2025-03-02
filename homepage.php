@@ -24,7 +24,9 @@
     </header>
     
     <section>
-        
+        <img src =https://cdn.pixabay.com/photo/2016/11/22/23/40/hands-1851218_1280.jpg width = "300" height = "300" style="display: block; margin-left: auto;
+        margin-right: auto; max-width: 100%; 
+        height: auto">
         <h1>Welcome to AwareLink</h1>
         <p>AwareLink is a trusted site for securely and discretely sharing STD (sexually transmitted disease) exposures to partners, and receiving information about nearby testing resources at the click of a button.</p>
     </section>
