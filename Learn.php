@@ -10,7 +10,7 @@
     <body>
         <header>
             <a href="homepage.php"><img src="LogoHeader.png" alt="Logo" height=50 width=150></a>
-            <h1>About Our STD Notification Service</h1>
+            <h1>Get the Facts</h1>
             <nav>
                 <ul>
                     <li><a href="homepage.php">Home</a></li>

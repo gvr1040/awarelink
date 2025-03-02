@@ -22,6 +22,10 @@
         </nav>
     </header>
     <section>
+        <h2>How it Works</h2>
+        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
+        
+
         <h2>Our Mission</h2>
         <p>At AwareLink, we understand that it can be sometimes difficult to notify partners about STD status. That's why we've created a confidential and secure way to anonymously share important health updates to others.</p>
 
@@ -30,13 +34,12 @@
         <p> Gray Reyes: 1st year student pursuing a BS in cybersecurity at RIT, back-end development</p>
         <p> Alicia Tesch: 1st year student pursuing a BS in computer science at RIT, front-end development and design </p>
         <p> Abigail Eckstein: 1st year student pursuing a BS in computer science, front-end development</p>
-        
-        <h2>How it Works</h2>
-        <p>Upload your medical documentation through our secure form. We verify the information and send a message to your specified partner(s). We will notify you when your information has been verified and sent out.</p>
-        
-        <h2>Privacy Policy</h2>
-        <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures. Read more about our privacy policy <a href="privacy_policy.php">here</a>.
- </p>
+
+
+    <h2>Privacy Policy</h2>
+                <p>All information submitted to our service is kept strictly confidential and protected with industry-standard security measures. Read more about our privacy policy <a href="privacy_policy.php">here</a>.
+         </p>
+
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>

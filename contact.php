@@ -170,6 +170,14 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
             <button type="submit">Find Testing Centers</button>
         </form>
     </section>
+
+    <section>
+        <h2> Can't access the testing centers?</h2>
+        <p> No worries! There are STD test resources available that don't require a testing center. </p>
+        <p> Healthline outlines some of the best at-home STD tests in 
+        <a href= "https://www.healthline.com/health/at-home-std-test#Quick-look-at-the-best-at-home-STD-tests"> this article</a> </p>
+        </p>
+    </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>
         <p><a href="privacy_policy.php">Privacy Policy</a></p>
