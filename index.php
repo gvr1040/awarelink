@@ -41,13 +41,13 @@
         <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>
     </footer>
 
-    <!-- Optional Script to show Thank you message upon form submission -->
+   
     <script>
         const form = document.getElementById('proof-form');
         form.onsubmit = function(event) {
-            event.preventDefault(); // Prevent form from submitting the traditional way
+            event.preventDefault(); 
             alert("Thank you for submitting your information.");
-            form.reset(); // Reset form fields if needed
+            form.reset(); 
         }
     </script>
 </body>

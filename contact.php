@@ -1,11 +1,10 @@
 <?php
-// Configuration
 $twilioSid = getenv('TWILIO_SID');
 $twilioAuthToken = getenv('TWILIO_AUTH_TOKEN');
 $twilioMessagingServiceSid = getenv('TWILIO_MESSAGING_SERVICE_SID');
 $twilioPhone = getenv('TWILIO_PHONE');
 
-// Function to get test centers using OpenStreetMap (Nominatim)
+
 function getTestCenters($location) {
     $url = "https://nominatim.openstreetmap.org/search?format=json&q=" . urlencode($location . " STD Testing Centers") . "&addressdetails=1";
 
@@ -43,13 +42,13 @@ function getTestCenters($location) {
 function sendSms($phoneNumber, $centers) {
     global $twilioSid, $twilioAuthToken, $twilioMessagingServiceSid;
 
-    // Prepare message body
+    
     $messageBody = "Hello,\n\nYou have an important health message that may need action.\n\nNearby STD Test Centers:\n" . implode("\n", $centers) . "\n\nVisit AwareLink for more details.";
 
     // Twilio API URL
     $url = "https://api.twilio.com/2010-04-01/Accounts/$twilioSid/Messages.json";
 
-    // cURL request
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, true);
@@ -78,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $location = $_POST['location'];
         $phoneNumbers = explode(',', $_POST['phone_numbers']);
 
-        // Get test centers from OpenStreetMap
+        
         $centers = getTestCenters($location);
 
         if (isset($centers['error'])) {
