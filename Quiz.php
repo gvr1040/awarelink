@@ -93,6 +93,10 @@
                 document.querySelectorAll('.fact').forEach(fact => {
                     fact.style.display = 'none';
                 });
+                
+                // Show the selected fact
+                document.getElementById(factId).style.display = 'block';
+            }
 
                 // Show the selected fact
                 document.getElementById(factId).style.display = 'block';

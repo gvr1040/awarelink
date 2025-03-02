@@ -1,9 +1,9 @@
 <?php
 // Configuration
-$twilioSid = getenv('ACc63b267f9d7f98c6bfe696177de0bf6e');
-$twilioAuthToken = getenv('f32f067099a59cb9f4b7d5a63f7d0baa');
-$twilioMessagingServiceSid = getenv('MG0c347703127d25c193efa2406254c738');
-$twilioPhone = getenv('+18553253928');
+$twilioSid = getenv('TWILIO_SID');
+$twilioAuthToken = getenv('TWILIO_AUTH_TOKEN');
+$twilioMessagingServiceSid = getenv('TWILIO_MESSAGING_SERVICE_SID');
+$twilioPhone = getenv('TWILIO_PHONE');
 
 // Function to get test centers using OpenStreetMap (Nominatim)
 function getTestCenters($location) {
