@@ -31,11 +31,22 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <label for="clinic">Clinic Name:</label>
+            <label for="clinic">Clinic / Test Provider Company Name:</label>
             <input type="text" id="clinic" name="clinic" required>
 
+            <label for="address">Clinic Address (if applicable):</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City (if applicable):</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State (if applicable):</label>
+            <input type="text" id="state" name="state" required>
+            
+            <sub>By submitting you agree that you are consenting to                    AwareLink's privacy policy and that you are 18 years or                         older.</sub>
             <button type="submit">Submit Information</button>
         </form>
+        
     </section>
     <footer>
         <p>&copy; 2025 STD Notification Service - AwareLink. All rights reserved.</p>

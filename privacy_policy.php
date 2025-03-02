@@ -26,6 +26,6 @@
     <h3>The Information We Collect When You Submit a Form</h3>
             <p> When you submit a form, we may collect the following information: </p>  
         <p> Contact Information: Name, email address, and phone number</p>
-        <p> Health Information: Information related to your STD status, exposure, and health records</p>
+        <p> Health Information: Information related to your STD status, exposure, health records, and clinic affiliation</p>
         <p> Authentification details: Information used to verify your identity</p>
         
