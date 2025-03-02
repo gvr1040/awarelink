@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit STD Proof</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
+        
+         <img src= "LogoHeader.png" alt="Logo" width="200" height="66">
         <h1>Submit Your Proof of STD Status</h1>
         <nav>
             <ul>

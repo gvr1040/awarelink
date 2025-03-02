@@ -1,52 +1,63 @@
-
 <?php
 // Configuration
 $twilioSid = getenv('TWILIO_SID');
 $twilioAuthToken = getenv('TWILIO_AUTH_TOKEN');
 $twilioPhone = getenv('TWILIO_PHONE');
-$googleMapsApiKey = getenv('GOOGLE_MAPS_API_KEY');
 
-// Function to get test centers
+// Function to get test centers from OpenStreetMap using Nominatim API
 function getTestCenters($location) {
-    global $googleMapsApiKey;
-    $url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=STD+Testing+Centers+near+".urlencode($location)."&key=".$googleMapsApiKey;
+    // OpenStreetMap's Nominatim API endpoint
+    $url = "https://nominatim.openstreetmap.org/search?format=json&q=" . urlencode($location) . "&addressdetails=1";
+
+    // Fetch the API response
     $response = file_get_contents($url);
+
+    // Check for failed request
+    if ($response === false) {
+        return ['error' => 'Failed to fetch data from OpenStreetMap API.'];
+    }
+
     $data = json_decode($response, true);
+
+    // Check if results are available
+    if (empty($data)) {
+        return ['error' => 'No results found for the given location.'];
+    }
+
+    // Parse and collect the results
     $centers = [];
-    
-    if (isset($data['results'])) {
-        foreach (array_slice($data['results'], 0, 3) as $place) {
-            $centers[] = $place['name'] . " - " . $place['formatted_address'];
+    foreach ($data as $place) {
+        // You can modify this to search specifically for STD test centers, hospitals, etc.
+        if (isset($place['type']) && $place['type'] == 'amenity' && isset($place['address']['hospital'])) {
+            $centers[] = $place['display_name'] . " - " . (isset($place['address']['road']) ? $place['address']['road'] : 'Unknown address');
         }
     }
-    
-    return $centers;
+
+    // Return top 3 results or fewer if not available
+    return array_slice($centers, 0, 3);
 }
 
-// Function to send SMS
-function sendSms($phoneNumber, $centers) {
+// Function to send SMS using Twilio API
+function sendSms($phoneNumber, $message) {
     global $twilioSid, $twilioAuthToken, $twilioPhone;
-    
-    // Prepare message body
-    $messageBody = "Nearby STD Test Centers:\n" . implode("\n", $centers);
-    
+
     // Initialize Twilio API request
     $url = "https://api.twilio.com/2010-04-01/Accounts/" . $twilioSid . "/Messages.json";
     $data = array(
         'From' => $twilioPhone,
         'To' => $phoneNumber,
-        'Body' => $messageBody
+        'Body' => $message
     );
-    
+
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
     curl_setopt($ch, CURLOPT_USERPWD, $twilioSid . ":" . $twilioAuthToken);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
+
     $response = curl_exec($ch);
     curl_close($ch);
-    
+
     return $response;
 }
 
@@ -60,23 +71,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $location = $_POST['location'];
         $phoneNumbers = explode(',', $_POST['phone_numbers']);
-        
-        // Get test centers
+
+        // Get test centers from OpenStreetMap
         $centers = getTestCenters($location);
-        
-        if (empty($centers)) {
+
+        if (isset($centers['error'])) {
+            $result['message'] = $centers['error'];
+        } elseif (empty($centers)) {
             $result['message'] = 'No testing centers found for this location.';
         } else {
             $sentCount = 0;
             $errorCount = 0;
-            
+
             // Send SMS to each phone number
             foreach ($phoneNumbers as $number) {
                 $number = trim($number);
                 if (!empty($number)) {
-                    $response = sendSms($number, $centers);
+                    // Prepare the message body
+                    $messageBody = "Nearby STD Test Centers:\n" . implode("\n", $centers);
+                    $response = sendSms($number, $messageBody);
                     $responseData = json_decode($response, true);
-                    
+
                     if (isset($responseData['sid'])) {
                         $sentCount++;
                     } else {
@@ -84,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
             }
-            
+
             if ($sentCount > 0) {
                 $result['success'] = true;
                 $result['message'] = "Successfully sent messages to $sentCount recipients." . 
@@ -108,19 +123,18 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STD Test Center Finder</title>
+    <title>SMS Sender</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>STD Test Center Finder</h1>
+        <h1>SMS Sender</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="send_sms.php">Test Center Finder</a></li>
-                <li><a href="Learn.php">Get the Facts</a></li>
+                <li><a href="send_sms.php">Send SMS</a></li>
             </ul>
         </nav>
     </header>
@@ -138,22 +152,22 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
                 </div>
             <?php endif; ?>
         <?php endif; ?>
-        
-        <h2>Find STD Testing Centers Near You</h2>
-        <p>Enter your location and phone number(s) to receive information about nearby STD testing centers.</p>
-        
+
+        <h2>Send SMS to Multiple Recipients</h2>
+        <p>Enter your message and phone number(s) to send SMS notifications about nearby STD testing centers.</p>
+
         <form id="sms-form" method="post" action="send_sms.php">
             <label for="location">Your Location:</label>
             <input type="text" id="location" name="location" placeholder="City, State or ZIP Code" required>
-            
+
             <label for="phone_numbers">Phone Number(s):</label>
             <input type="text" id="phone_numbers" name="phone_numbers" placeholder="Separate multiple numbers with commas" required>
-            
-            <button type="submit">Find Testing Centers</button>
+
+            <button type="submit">Send SMS</button>
         </form>
     </section>
     <footer>
-        <p>&copy; 2025 STD Notification Service - Aware Link. All rights reserved.</p>
+        <p>&copy; 2025 SMS Notification Service. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -1,49 +1,111 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+// Set up Twilio credentials
+$twilioSid = getenv('ACc63b267f9d7f98c6bfe696177de0bf6e');
+$twilioAuthToken = getenv('f32f067099a59cb9f4b7d5a63f7d0baa');
+$twilioMessagingServiceSid = getenv('MG0c347703127d25c193efa2406254c738');
 
-    // Set the recipient's email as the user's email (the one they input in the form)
-    $to = $email; // Send email to the email the user provides
-    $subject = "Thank you for contacting us!"; // Subject for the confirmation email
-    $headers = "From: no-reply@yourdomain.com\r\n"; // Replace with your new email address
-    $headers .= "Reply-To: no-reply@yourdomain.com\r\n"; // Replace with your new email address
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+// Function to get STD testing centers from OpenStreetMap (Nominatim)
+function getTestCenters($location) {
+    $url = "https://nominatim.openstreetmap.org/search?format=json&q=" . urlencode($location . " STD Testing Centers") . "&addressdetails=1";
 
-    // Email body content
-    $body = "Hello " . $name . ",\n\n";
-    $body .= "Thank you for reaching out to us. Here are the details of your message:\n\n";
-    $body .= "Subject: " . $subject . "\n\n";
-    $body .= "Message:\n" . $message . "\n\n";
-    $body .= "We will get back to you shortly.\n\n";
-    $body .= "Best regards,\nThe STD Notification Service Team";
+    // Set User-Agent to avoid 403 error
+    $opts = [
+        "http" => [
+            "header" => "User-Agent: MyHealthApp/1.0\r\n"
+        ]
+    ];
+    $context = stream_context_create($opts);
 
-    // Send email to the user
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Confirmation email sent to your address!";
-    } else {
-        echo "There was an error sending the confirmation email. Please try again.";
+    $response = file_get_contents($url, false, $context);
+
+    if ($response === false) {
+        return ['error' => 'Failed to fetch data from OpenStreetMap.'];
     }
 
-    // Send an email to you (admin)
-    $admin_email = "admin@yourdomain.com"; // Replace with your own admin email
-    $admin_subject = "New Contact Form Submission: " . $subject;
-    $admin_headers = "From: " . $email . "\r\n"; // Sender's email
-    $admin_headers .= "Reply-To: " . $email . "\r\n"; // Reply-to address is the user's email
-    $admin_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $data = json_decode($response, true);
 
-    // Admin email body content
-    $admin_body = "You have received a new message from the contact form.\n\n";
-    $admin_body .= "Name: " . $name . "\n";
-    $admin_body .= "Email: " . $email . "\n";
-    $admin_body .= "Subject: " . $subject . "\n\n";
-    $admin_body .= "Message:\n" . $message . "\n";
+    if (empty($data)) {
+        return ['error' => 'No testing centers found for this location.'];
+    }
 
-    // Send email to admin (you)
-    mail($admin_email, $admin_subject, $admin_body, $admin_headers);
+    // Extract first 3 results
+    $centers = [];
+    foreach (array_slice($data, 0, 3) as $place) {
+        $name = $place['display_name'] ?? 'Unknown Center';
+        $centers[] = $name;
+    }
+
+    return $centers;
 }
-?>
 
+// Function to send SMS using Twilio
+function sendSms($phoneNumber, $centers) {
+    global $twilioSid, $twilioAuthToken, $twilioMessagingServiceSid;
+
+    $messageBody = "Hello,\n\nYou have an important health message that may need action.\n\nNearby STD Test Centers:\n" . implode("\n", $centers) . "\n\nVisit AwareLink for more details.";
+
+    $url = "https://api.twilio.com/2010-04-01/Accounts/$twilioSid/Messages.json";
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, "$twilioSid:$twilioAuthToken");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        "To" => $phoneNumber,
+        "MessagingServiceSid" => $twilioMessagingServiceSid,
+        "Body" => $messageBody
+    ]));
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+
+// Handle AJAX request
+$response = ['success' => false, 'message' => ''];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $location = $_POST['location'] ?? '';
+    $phoneNumbers = $_POST['phone_numbers'] ?? '';
+
+    if (empty($location) || empty($phoneNumbers)) {
+        $response['message'] = 'Please provide both location and phone numbers.';
+    } else {
+        $phoneNumbers = explode(',', $phoneNumbers);
+        $centers = getTestCenters($location);
+
+        if (isset($centers['error'])) {
+            $response['message'] = $centers['error'];
+        } elseif (empty($centers)) {
+            $response['message'] = 'No testing centers found.';
+        } else {
+            $sentCount = 0;
+            foreach ($phoneNumbers as $number) {
+                $number = trim($number);
+                if (!empty($number)) {
+                    $twilioResponse = sendSms($number, $centers);
+                    $twilioData = json_decode($twilioResponse, true);
+
+                    if (isset($twilioData['sid'])) {
+                        $sentCount++;
+                    }
+                }
+            }
+
+            if ($sentCount > 0) {
+                $response['success'] = true;
+                $response['message'] = "Successfully sent messages to $sentCount recipients.";
+            } else {
+                $response['message'] = 'Failed to send messages.';
+            }
+        }
+    }
+}
+
+// Return JSON response
+header('Content-Type: application/json');
+echo json_encode($response);
+?>
